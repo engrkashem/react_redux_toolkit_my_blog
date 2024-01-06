@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 
 const Post = ({ blog = {} }) => {
-  const { image, createdAt, likes, title, tags, id } = blog;
+  const { image, createdAt, likes, title, tags, id, isSaved } = blog;
 
   const tagsString = tags?.map((tag) => `#${tag}`).join(", ");
+
+  const btnText = isSaved ? "Saved" : "Save";
 
   return (
     <div className="lws-card">
@@ -24,7 +26,12 @@ const Post = ({ blog = {} }) => {
         <div className="lws-tags">{tagsString}</div>
         {/* <!-- Show this element if post is saved --> */}
         <div className="flex gap-2 mt-4">
-          <span className="lws-badge"> Saved </span>
+          <span
+            className="lws-badge"
+            style={isSaved ? {} : { color: "#808080" }}
+          >
+            {btnText}
+          </span>
         </div>
         {/* <!-- Show this element if post is saved Ends --> */}
       </div>

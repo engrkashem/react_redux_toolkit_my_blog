@@ -1,7 +1,9 @@
 const PostDetailsMain = ({ blog }) => {
-  const { image, likes, title, tags, description } = blog;
+  const { image, likes, title, tags, description, isSaved } = blog;
 
   const tagsString = tags?.map((tag) => `#${tag}`).join(", ");
+
+  const btnText = isSaved ? "Saved" : "Save";
 
   return (
     <main className="post">
@@ -25,8 +27,12 @@ const PostDetailsMain = ({ blog }) => {
           </button>
           {/* <!-- handle save on button click --> */}
           {/* <!-- use ".active" class and "Saved" text  if a post is saved, other wise "Save" --> */}
-          <button className="active save-btn" id="lws-singleSavedBtn">
-            <i className="fa-regular fa-bookmark"></i> Saved
+          <button
+            className="active save-btn"
+            id="lws-singleSavedBtn"
+            style={isSaved ? {} : { color: "#808080" }}
+          >
+            <i className="fa-regular fa-bookmark"></i> {btnText}
           </button>
         </div>
         <div className="mt-6">
