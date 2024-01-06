@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
 const Post = ({ blog = {} }) => {
-  const { image, createdAt, likes, title, tags } = blog;
+  const { image, createdAt, likes, title, tags, id } = blog;
 
   const tagsString = tags?.map((tag) => `#${tag}`).join(", ");
 
   return (
     <div className="lws-card">
-      <Link to="/posts/1">
+      <Link to={`/posts/${id}`}>
         <img src={image} className="lws-card-image" alt="" />
       </Link>
       <div className="p-4">
@@ -18,7 +18,7 @@ const Post = ({ blog = {} }) => {
             {likes}
           </p>
         </div>
-        <Link to="/posts/1" className="lws-postTitle">
+        <Link to={`/posts/${id}`} className="lws-postTitle">
           {title}
         </Link>
         <div className="lws-tags">{tagsString}</div>
