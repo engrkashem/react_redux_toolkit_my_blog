@@ -15,8 +15,6 @@ const RelatedPosts = ({ currentBlogId, tags }) => {
     dispatch(fetchRelatedBlogs({ tags, currentBlogId }));
   }, [dispatch, tags, currentBlogId]);
 
-  console.log(relatedBlogs);
-
   // decide what to render
   let content;
   if (isLoading) content = <Loading />;

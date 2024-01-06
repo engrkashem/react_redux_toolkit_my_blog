@@ -10,10 +10,11 @@ const Posts = () => {
   const { blogs, isLoading, isError, error } = useSelector(
     (state) => state.blogs
   );
+  const { saved } = useSelector((state) => state.filter);
 
   useEffect(() => {
-    dispatch(fetchBlogs());
-  }, [dispatch]);
+    dispatch(fetchBlogs(saved));
+  }, [dispatch, saved]);
 
   // decide what to render
   let content;
