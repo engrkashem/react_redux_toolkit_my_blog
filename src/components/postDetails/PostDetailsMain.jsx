@@ -32,7 +32,7 @@ const PostDetailsMain = ({ blog }) => {
             id="lws-singleSavedBtn"
             style={isSaved ? {} : { color: "#808080" }}
           >
-            <i className="fa-regular fa-bookmark"></i> {btnText}
+            <i className="fa-regular fa-bookmark"></i> {btnText}{" "}
           </button>
         </div>
         <div className="mt-6">

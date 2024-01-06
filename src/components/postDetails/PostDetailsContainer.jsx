@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import PostDetailsAside from "./PostDetailsAside";
 import PostDetailsMain from "./PostDetailsMain";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchBlog } from "../../features/blog/blogSlice";
 import Loading from "../shared/Loading";
 import ErrorComponent from "../shared/ErrorComponent";
+import RelatedPosts from "../relatedPosts/RelatedPosts";
 
 const PostDetailsContainer = () => {
   const { blogId: id } = useParams();
@@ -38,7 +38,7 @@ const PostDetailsContainer = () => {
       {content}
 
       {/* <!-- detailed post aside --> */}
-      <PostDetailsAside />
+      <RelatedPosts currentBlogId={blog?.id} tags={blog?.tags} />
     </section>
   );
 };

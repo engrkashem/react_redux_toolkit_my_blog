@@ -30,7 +30,8 @@ const Post = ({ blog = {} }) => {
             className="lws-badge"
             style={isSaved ? {} : { color: "#808080" }}
           >
-            {btnText}
+            {" "}
+            {btnText}{" "}
           </span>
         </div>
         {/* <!-- Show this element if post is saved Ends --> */}
