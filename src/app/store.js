@@ -4,6 +4,7 @@ import blogsReducer from "../features/blogs/blogsSlice";
 import blogReducer from "../features/blog/blogSlice";
 import relatedBlogsReducer from "../features/relatedBlogs/relatedBlogsSlice";
 import filterReducer from "../features/filter/filterSlice";
+import sortReducer from "../features/sort/sortSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
     blog: blogReducer,
     relatedBlogs: relatedBlogsReducer,
     filter: filterReducer,
+    sort: sortReducer,
   },
 });
